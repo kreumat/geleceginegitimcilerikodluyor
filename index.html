@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pixel Drift City</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Car Selection Screen -->
+    <div id="startScreen" class="screen">
+        <div class="panel selection-panel">
+            <h1>Pixel Drift</h1>
+            <p>Use <strong>WASD</strong> to move, <strong>SPACE</strong> to drift.</p>
+            
+            <div class="car-container" id="carContainer">
+                <!-- Populated by JavaScript -->
+            </div>
+            
+            <button id="startBtn">Start Game</button>
+            <div id="loadingStatus" class="hidden">Loading sprites...</div>
+        </div>
+    </div>
+
+    <!-- Game HUD -->
+    <div id="uiLayer" class="hidden">
+        <div id="hud">
+            <div>Car: <span id="carNameDisplay" class="hud-value">-</span></div>
+            <div>Speed: <span id="speedDisplay" class="hud-value">0</span> km/h</div>
+            <div>Time: <span id="timeDisplay" class="hud-value">0</span>s</div>
+            <div>Score: <span id="scoreDisplay" class="hud-value">0</span></div>
+            <div id="driftScoreContainer">Drift: <span id="driftScoreDisplay" class="hud-value">0</span></div>
+        </div>
+        
+        <div id="controlsInfo">
+            WASD: 8-Way Movement | SPACE: Drift Mode
+        </div>
+
+        <div id="debugPanel" class="hidden">
+            <div class="debug-title">Debug Panel</div>
+            <div>Keys: <span id="debugKeys">-</span></div>
+            <div>Direction: <span id="debugTarget">-</span></div>
+            <div>Velocity: <span id="debugVel">-</span></div>
+        </div>
+        
+        <div class="ui-buttons">
+            <button id="restartBtn">Restart</button>
+            <button id="changeCarBtn">Change Car</button>
+        </div>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
